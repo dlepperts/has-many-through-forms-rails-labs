@@ -19,7 +19,9 @@
 
 <h4>Users Who Have Commented</h4>
 <ul>
-    <% @post.comments.each do |comment|%>
-        <% comment.user %>
-    <% end %>
+<% @post.users.distinct.each do |user| %>
+  <li>
+    <%= link_to user.username, user_path(user) %>
+  </li>
+<% end %>
 </ul>
