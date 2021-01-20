@@ -13,10 +13,13 @@
 
 <h4>Comments</h4>
 <ul>
-    <% @post.comments.each do |comment|%>
-        <li><%=comment.content%> </li>
-    <% end %>
+<% @post.comments.each do |comment| %>
+  <li>
+    <%= comment.user.username %> says: <%= comment.content %>
+  </li>
+<% end %>
 </ul>
+
 
 <h4>Users Who Have Commented</h4>
 <ul>
@@ -45,3 +48,7 @@
   <br/>
   <%= f.submit %>
 <% end %>
+
+
+
+
